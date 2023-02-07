@@ -23,7 +23,11 @@ module.exports = {
       green: colors.green,
       red: colors.red
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }
