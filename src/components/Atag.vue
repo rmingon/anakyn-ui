@@ -1,5 +1,5 @@
 <template>
-  <div :class="[size]">
+  <div :class="[size, borderless]">
     <slot></slot>
   </div>
 </template>
@@ -8,6 +8,7 @@
   interface Props {
     size: Size
     closable: boolean
+    borderless: boolean
   }
 
   const SIZE_CSS : Record<Size, string> = {
@@ -18,10 +19,11 @@
 
   const props = withDefaults(defineProps<Props>(), {
     size: "m",
+    borderless: false
   })
 
   const size = SIZE_CSS[props.size]
-
+  const borderless = props.borderless ? 'border-2' : ''
 
 </script>
 
