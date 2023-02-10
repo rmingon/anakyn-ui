@@ -1,6 +1,6 @@
 {
   "name": "anakyn-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This is a simple UI package",
   "author": "RMINGON",
   "private": false,
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && mv dist/src dist/types",
+    "build": "vite build ",
     "build-old": "run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",

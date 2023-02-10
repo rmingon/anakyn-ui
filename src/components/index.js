@@ -1,3 +1,4 @@
+import '../assets/main.css'
 
 /* eslint-disable import/prefer-default-export */
 
