@@ -7,7 +7,7 @@
 <script setup lang="ts">
   interface Props {
     size: Size
-    type: 'default' | 'tertiary' | 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error'
+    type: Type
     dashed?: boolean
   }
 
@@ -30,7 +30,7 @@
 
   const props = withDefaults(defineProps<Props>(), {
     size: "m",
-    type: "default",
+    type: "primary",
     dashed: false
   })
 
