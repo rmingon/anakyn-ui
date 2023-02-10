@@ -1,6 +1,9 @@
 <template>
-  <div :class="[size, borderless]">
+  <div :class="[size, borderless]" class="flex items-center">
     <slot></slot>
+    <div class="cursor-pointer" v-if="props.closable" @click="emit('close', event)">
+      <svg xmlns="http://www.w3.org/2000/svg" :class="[cross_size]" viewBox="0 0 32 32"><path fill="currentColor" d="M24 9.4L22.6 8L16 14.6L9.4 8L8 9.4l6.6 6.6L8 22.6L9.4 24l6.6-6.6l6.6 6.6l1.4-1.4l-6.6-6.6L24 9.4z"/></svg>
+    </div>
   </div>
 </template>
 
@@ -9,6 +12,7 @@
     size: Size
     closable: boolean
     borderless: boolean
+    type: Type
   }
 
   const SIZE_CSS : Record<Size, string> = {
@@ -17,13 +21,38 @@
     "l": 'text-xl px-5 py-3',
   } as const
 
+  const TYPE_CSS : Record<Type, string> = {
+    "primary": 'bg-emerald-700 hover:bg-emerald-600 active:bg-emerald-500 text-white',
+    "secondary": 'text-zinc-500 hover:text-zinc-700 bg-gray-200 hover:bg-gray-100',
+    "tertiary": 'text-zinc-400 hover:text-zinc-500 hover:border-gray-300',
+    "success": 'bg-green-700 hover:bg-green-600 active:bg-green-500 text-white',
+    "info": 'bg-sky-700 hover:bg-sky-600 active:bg-sky-500 text-white',
+    "warning": 'bg-yellow-700 hover:bg-yellow-600 active:bg-yellow-500 text-white',
+    "error": 'bg-red-700 hover:bg-red-600 active:bg-red-500 text-white font-roboto',
+    "default": ''
+  } as const
+
+  const CLOSE_CSS_SIZE : Record<Size, string> = {
+    "s": 'h-4 w-4',
+    "m": 'h-5 w-5',
+    "l": 'h-6 w-6',
+  } as const
+
   const props = withDefaults(defineProps<Props>(), {
+    type: 'primary',
     size: "m",
-    borderless: false
+    borderless: true,
+    closable: false
   })
 
   const size = SIZE_CSS[props.size]
-  const borderless = props.borderless ? 'border-2' : ''
+  const cross_size = CLOSE_CSS_SIZE[props.size]
+  const type = TYPE_CSS[props.type]
+  const borderless = props.borderless ? '' : 'border-2'
+
+  const emit = defineEmits<{
+    (e: 'close', event: Event): void
+  }>()
 
 </script>
 
