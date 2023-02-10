@@ -6,7 +6,8 @@ export default {
   component: AButton,
   argTypes: {
     type: { control: 'select', options: ['primary', 'secondary', 'info', 'warning', 'error'] },
-    size: { control: 'select', options: ['s', 'm', 'l'] }
+    size: { control: 'select', options: ['s', 'm', 'l'] },
+    label: { control: 'text' }
   }
 };
 
