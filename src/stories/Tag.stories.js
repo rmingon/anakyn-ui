@@ -1,4 +1,5 @@
 import { ATag } from '../components/index.js';
+import { action } from '@storybook/addon-actions'
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
@@ -6,8 +7,12 @@ export default {
   component: ATag,
   argTypes: {
     type: { control: 'select', options: ['primary', 'secondary', 'info', 'warning', 'error'] },
-    size: { control: 'select', options: ['s', 'm', 'l'] }
-  }
+    size: { control: 'select', options: ['s', 'm', 'l'] },
+    closable: { control: 'boolean'},
+    borderless: { control: 'boolean'},
+    label: { control: 'text' },
+  },
+  methods: { action: action('close') }
 };
 
 const Template = (args) => ({
@@ -15,7 +20,7 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: '<a-tag v-bind="args" > {{ args.label }} </a-tag>',
+  template: '<a-tag  v-bind="args" > {{ args.label }} </a-tag>',
 });
 
 export const Primary = Template.bind({});
