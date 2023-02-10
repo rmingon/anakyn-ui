@@ -1,6 +1,6 @@
 {
   "name": "anakyn-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a simple UI package",
   "author": "RMINGON",
   "private": false,
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vite build && mv dist/src dist/types",
     "build-old": "run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
@@ -29,8 +29,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "storybook": "start-storybook -p 6006 ",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 "
   },
   "dependencies": {
     "@babel/types": "^7.20.7",
