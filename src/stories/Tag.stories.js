@@ -20,7 +20,7 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: '<a-tag  v-bind="args" > {{ args.label }} </a-tag>',
+  template: '<a-tag v-bind="args" > {{ args.label }} </a-tag>',
 });
 
 export const Primary = Template.bind({});
