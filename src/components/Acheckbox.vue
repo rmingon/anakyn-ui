@@ -1,11 +1,7 @@
 <template>
-
+  <input type="checkbox">
 </template>
 
 <script>
 
 </script>
-
-<style scoped>
-
-</style>
