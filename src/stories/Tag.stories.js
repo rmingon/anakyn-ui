@@ -26,24 +26,24 @@ const Template = (args) => ({
 export const Primary = Template.bind({});
 Primary.args = {
   type: 'primary',
-  label: 'Button',
+  label: 'Tag',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   type: 'secondary',
-  label: 'Button',
+  label: 'Tag',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'l',
   type: 'info',
-  label: 'Button',
+  label: 'Tag',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 's',
-  label: 'Button',
+  label: 'Tag',
 };
