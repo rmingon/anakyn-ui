@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-  import {SIZE_CSS, TYPE_CSS} from "@/components/MainStyle";
+  import {SIZE_CSS, TYPE_CSS} from "./MainStyle";
 
   interface Props {
     size: Size
