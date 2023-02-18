@@ -19,7 +19,4 @@ const Template = (args) => ({
 });
 
 export const Primary = Template.bind({});
-Primary.args = {
-  type: 'primary',
-  label: 'Tag',
-};
+Primary.args = {};
