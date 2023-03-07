@@ -5,13 +5,13 @@ export const SIZE_CSS : Record<Size, string> = {
 } as const
 
 export const TYPE_CSS : Record<Type, string> = {
-  "primary": 'bg-emerald-700 text-white',
-  "secondary": 'text-zinc-500 bg-gray-200',
+  "primary": 'bg-emerald-400 text-emerald-800',
+  "secondary": 'bg-zinc-300 text-zinc-800',
   "tertiary": 'text-zinc-400',
-  "success": 'bg-green-700 text-white',
-  "info": 'bg-sky-700 text-white',
-  "warning": 'bg-yellow-700 text-white',
-  "error": 'bg-red-700 text-white',
+  "success": 'bg-green-400 text-green-800',
+  "info": 'bg-sky-400 text-sky-800',
+  "warning": 'bg-yellow-400 text-yellow-800',
+  "error": 'bg-red-400 text-red-800',
   "default": ''
 } as const
 

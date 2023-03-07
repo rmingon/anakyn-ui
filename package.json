@@ -1,6 +1,6 @@
 {
   "name": "anakyn-ui",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "This is a simple UI package",
   "author": "RMINGON",
   "private": false,
@@ -32,10 +32,10 @@
     "storybook": "start-storybook -p 6006 "
   },
   "dependencies": {
-    "@babel/types": "^7.20.7",
     "vue": "^3.2.45"
   },
   "devDependencies": {
+    "@babel/types": "^7.20.7",
     "@babel/core": "^7.20.12",
     "@rushstack/eslint-patch": "^1.1.4",
     "@storybook/addon-actions": "^6.5.16",

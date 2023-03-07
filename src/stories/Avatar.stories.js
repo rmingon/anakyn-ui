@@ -1,48 +1,46 @@
-import { ATag } from '../components/index.js';
+import { AAvatar } from '../components/index.js';
 import { action } from '@storybook/addon-actions'
 
+// More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'Common/Tag',
-  component: ATag,
+  title: 'Common/Avatar',
+  component: AAvatar,
   argTypes: {
-    type: { control: 'select', options: ['primary', 'secondary', 'info', 'warning', 'error', 'tertiary', 'success'] },
     size: { control: 'select', options: ['s', 'm', 'l'] },
-    closable: { control: 'boolean'},
-    borderless: { control: 'boolean'},
-    label: { control: 'text' },
+    src: { control: 'text' },
   },
+  methods: { action: action('close') }
 };
 
 const Template = (args) => ({
-  components: { ATag },
+  components: { AAvatar },
   setup() {
     return { args };
   },
-  template: '<a-tag v-bind="args" @close="close" > {{ args.label }} </a-tag>',
-  methods: { close: action('close') }
+  template: '<a-avatar v-bind="args" > {{ args.label }} </a-avatar>',
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
   type: 'primary',
-  label: 'Tag',
+  label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   type: 'secondary',
-  label: 'Tag',
+  label: 'Button',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'l',
   type: 'info',
-  label: 'Tag',
+  label: 'Button',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 's',
-  label: 'Tag',
+  label: 'Button',
 };
